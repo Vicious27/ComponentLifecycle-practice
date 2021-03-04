@@ -1,5 +1,5 @@
 import './App.css';
-import Demo from './Demo';
+import Posts from './Posts';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
           Component Lifecycle
         </h1>
       </header>
-      <Demo />
+      <Posts />
     </>
   );
 }

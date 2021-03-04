@@ -34,7 +34,10 @@ a {
 }
 
 li {
+  margin: 2rem;
   text-align: center;
+  color: white;
+  list-style-type: none;
 }
 
 hr {
