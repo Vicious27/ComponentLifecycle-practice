@@ -1,39 +1,27 @@
 import React from 'react';
-import "./App.css";
+import './App.css';
 
-
-class Posts extends React.Component {
+class Post extends React.Component {
   state = {
-    isLoaded: false,
-    Posts: []
+    count: 0
+  };
+
+  handleNotReactClick = e => {
+    e.preventDefault();
+    this.setState({ count: this.state.count + 1 })
   }
 
   componentDidMount() {
-    fetch("https://site.com/api/posts")
-      .then(response => response.json())
-      .then(posts => {
-        this.setState({
-          posts: posts,
-          isLoaded: true
-        });
-      })
-      .catch(error => console.error(error));
+    const button = document.getElementById("not-react");
+    button.addEventListener("click", this.handleNotReactClick);
+    button.innerHTML = "React-Controlled";
   }
+
   render() {
     return (
-      <ul>
-        {this.state.isLoaded ? (
-          this.state.posts.map(post => (
-            <li key={post.id}>
-              {post.title}
-            </li>
-          ))
-        ) : (
-            <li>Fetching Posts...</li>
-          )}
-      </ul>
-    )
+      <p>Count:{this.state.count}!</p>
+    );
   }
 }
 
-export default Posts;
+export default Post;
