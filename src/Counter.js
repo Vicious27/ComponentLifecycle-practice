@@ -3,34 +3,50 @@ import './App.css';
 
 class Counter extends React.Component {
   state = {
-    count: 0
+    posts: ["First Post"]
   }
+
+  timerId;
 
   componentDidMount() {
-    setInterval(() => {
-      this.setState({ count: this.state.count + 1 })
-    }, 500)
+    this.timeId = setInterval(() => {
+      this.setState({
+        posts: [...this.state.posts, "New Post"]
+      });
+    }, 500);
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    if (nextState.count % 2) {
-      return false;
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    //stop time after 20 posts
+    if (this.state.posts.length >= 20) {
+      clearInterval(this.timeId)
     }
-    else {
-      return true;
-    }
+    //scroll to bottom of postsContainer
+    const postsContainer = document.getElementById("posts");
+    postsContainer.scrollTo(
+      0,
+      postsContainer.scrollHeight
+    );
   }
 
   render() {
     return (
-      <Header count={this.state.count} />
+      <div
+        id="posts"
+        style={{
+          overflow: "scroll",
+          height: "200px",
+          border: "1px lightgray solid"
+        }}>
+        <ol>
+          {this.state.posts.map(post => (
+            <li>{post}</li>
+          ))}
+        </ol>
+      </div>
     )
   }
 }
-
-const Header = props => (
-  <p>{props.count}</p>
-)
 
 
 export default Counter;
