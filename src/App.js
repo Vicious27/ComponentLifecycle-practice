@@ -1,5 +1,5 @@
 import './App.css';
-import Posts from './Posts';
+import Counter from './Counter';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
           Component Lifecycle
         </h1>
       </header>
-      <Posts />
+      <Counter />
     </>
   );
 }
