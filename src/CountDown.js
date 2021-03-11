@@ -21,7 +21,7 @@ class CountDown extends React.Component {
 
   componentWillUnmount() {
     clearInterval(this.timeId);
-    console.log("Timer about to unmount!");
+    console.log("That's all for tonight!");
   }
 
   render() {
