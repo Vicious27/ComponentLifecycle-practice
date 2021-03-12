@@ -1,29 +1,15 @@
-import React from 'react';
-import CountDown from './CountDown';
 import './App.css';
+import Practice1 from './Practice1';
 
-class App extends React.Component {
-  state = {
-    displayTimer: false
-  };
-
-  toggleTimer = () => {
-    this.setState({
-      displayTimer: !this.state.displayTimer
-    });
-  };
-
-  render() {
-    return (
-      <div>
-        {this.state.displayTimer ? (<CountDown toggleTimer={this.toggleTimer} />
-        ) : (
-          <button onClick={this.toggleTimer}>Start Timer</button>
-        )}
-      </div>
-    );
-  }
+function App() {
+  return (
+    <>
+      <header className="App-header">
+        <h1>Component lifecycle Practice</h1>
+      </header>
+      <Practice1 />
+    </>
+  );
 }
-
 
 export default App;
