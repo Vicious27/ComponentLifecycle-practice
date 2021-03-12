@@ -1,5 +1,6 @@
 import './App.css';
 import Practice1 from './Practice1';
+import Practice2 from './Practice2';
 
 function App() {
   return (
@@ -7,7 +8,8 @@ function App() {
       <header className="App-header">
         <h1>Component lifecycle Practice</h1>
       </header>
-      <Practice1 />
+      {/* <Practice1 /> */}
+      <Practice2 />
     </>
   );
 }
