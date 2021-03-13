@@ -18,6 +18,10 @@ h1,h2 {
  text-align: center;
 }
 
+.practice2 {
+  color: rgb(63, 184, 59);
+}
+
 h1.title {
   color: rgba(196, 169, 207, 0.986);
 }

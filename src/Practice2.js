@@ -1,4 +1,5 @@
 import React from "react";
+import './App.css';
 
 class Practice2 extends React.Component {
   state = {
@@ -20,9 +21,17 @@ class Practice2 extends React.Component {
     5  Add a catch to log out any errors
   */
 
+  componentDidMount() {
+    fetch("https://dev-react-explained-api.pantheonsite.io/wp-json/wp/v2/posts")
+      .then(response => response.json())
+      .then(posts => this.setState({ post: posts })
+      )
+      .catch(error => console.error(error))
+  }
+
   render() {
     return (
-      <header>
+      <header className="practice2">
         <h1>Posts</h1>
         <ul>
           {this.state.posts.map(post => (
