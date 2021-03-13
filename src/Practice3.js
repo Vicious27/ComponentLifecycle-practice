@@ -1,4 +1,5 @@
 import React from "react";
+import './App.css';
 
 class Practice3 extends React.Component {
   state = {
