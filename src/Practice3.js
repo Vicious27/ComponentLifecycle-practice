@@ -29,13 +29,15 @@ class Practice3 extends React.Component {
 }
 
 class BarChart extends React.Component {
-  /* 
-    1. Call shouldComponentUpdate(nextProps, nextState) {}
-    2. Check to see if nextProps.points is divisble by 5 with no remainder
-        (nextProps.points % 5)
-    3. If points has a remainder then return false
-    4. If points has no remainder the return true
-  */
+
+  shouldComponentUpdate(nextProps, nextState) {
+    if (nextProps.points % 5) {
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
 
   render() {
     const barStyles = {
